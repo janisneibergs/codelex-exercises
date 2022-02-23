@@ -11,14 +11,14 @@ public class VariablesAndNames {
         int carpoolCapacity;
         double averagePassengersPerCar;
 
-        cars = 100; //cars
+        cars = 100;
         seatsInACar = 4;
         drivers = 30;
         passengers = 90;
         carsNotDriven = cars - drivers;
         carsDriven = drivers;
         carpoolCapacity = carsDriven * seatsInACar;
-        averagePassengersPerCar = Math.round(passengers / carsDriven);
+        averagePassengersPerCar = Math.round(passengers / carsDriven*100)/100;
 
 
         System.out.println("There are " + cars + " cars available.");
