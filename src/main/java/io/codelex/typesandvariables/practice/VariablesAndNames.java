@@ -9,7 +9,7 @@ public class VariablesAndNames {
         int carsDriven;
         int seatsInACar;
         int carpoolCapacity;
-        double averagePassengersPerCar;
+        float averagePassengersPerCar;
 
         cars = 100;
         seatsInACar = 4;
@@ -18,7 +18,7 @@ public class VariablesAndNames {
         carsNotDriven = cars - drivers;
         carsDriven = drivers;
         carpoolCapacity = carsDriven * seatsInACar;
-        averagePassengersPerCar = Math.round(passengers / carsDriven*100)/100;
+        averagePassengersPerCar = passengers / carsDriven;
 
 
         System.out.println("There are " + cars + " cars available.");

@@ -1,19 +1,23 @@
 package io.codelex.arithmetic.practice;
 
-import io.codelex.NoCodeWrittenException;
-
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 class Geometry {
-    static double areaOfCircle(BigDecimal radius) {
-        throw new NoCodeWrittenException();
+    static BigDecimal areaOfCircle(BigDecimal radius) {
+        BigDecimal constante = new BigDecimal(6.28);
+        BigDecimal areaCircle = radius.multiply(constante);
+        return areaCircle.setScale(2, RoundingMode.HALF_UP);
     }
 
-    static double areaOfRectangle(BigDecimal length, BigDecimal width) {
-        throw new NoCodeWrittenException();
+    static BigDecimal areaOfRectangle(BigDecimal length, BigDecimal width) {
+        BigDecimal areaRectangle = length.multiply(width);
+        return areaRectangle;
     }
 
-    static double areaOfTriangle(BigDecimal base, BigDecimal h) {
-        throw new NoCodeWrittenException();
+    static BigDecimal areaOfTriangle(BigDecimal base, BigDecimal h) {
+        BigDecimal baseHeight = base.multiply(h);
+        BigDecimal areaTriangle = baseHeight.multiply(BigDecimal.valueOf(0.5));
+        return areaTriangle.setScale(2, RoundingMode.HALF_UP);
     }
 }
