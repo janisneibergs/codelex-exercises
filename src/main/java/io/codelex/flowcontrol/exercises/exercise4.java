@@ -27,7 +27,7 @@ public class exercise4 {
             case 5:
                 System.out.println("Saturday");
                 break;
-            case 60:
+            case 6:
                 System.out.println("Sunday");
                 break;
             default:
