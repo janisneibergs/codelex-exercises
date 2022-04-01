@@ -115,11 +115,11 @@ public class TicTacToe {
         return (checkRows() || checkCols() || checkDiag());
     }
 
-    public static boolean threeCheck(char c1, char c2, char c3) {
+    private static boolean threeCheck(char c1, char c2, char c3) {
         return ((c1 != ' ') && (c1 == c2) && (c2 == c3));
     }
 
-    public static boolean checkRows() {
+    private static boolean checkRows() {
         for (int i = 0; i < 3; i++) {
             if (threeCheck(board[0][i], board[1][i], board[2][i])) {
                 return true;
@@ -128,7 +128,7 @@ public class TicTacToe {
         return false;
     }
 
-    public static boolean checkCols() {
+    private static boolean checkCols() {
         for (int i = 0; i < 3; i++) {
             if (threeCheck(board[i][0], board[i][1], board[i][2])) {
                 return true;
@@ -137,11 +137,11 @@ public class TicTacToe {
         return false;
     }
 
-    public static boolean checkDiag() {
+    private static boolean checkDiag() {
         return ((threeCheck(board[0][0], board[1][1], board[2][2])) || (threeCheck(board[0][2], board[1][1], board[2][0])));
     }
 
-    public static boolean filledBoard() {
+    private static boolean filledBoard() {
         boolean full = true;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {

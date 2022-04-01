@@ -45,7 +45,6 @@ public class exercise8 {
                         arrWordGuesed[c] = input;
                         found++;
                         count++;
-
                     }
                 }
                 if (found > 0) {
