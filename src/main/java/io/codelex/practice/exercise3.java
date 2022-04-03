@@ -9,6 +9,8 @@ class DatePeriod {
     private LocalDate firstEnd;
     private LocalDate secondStart;
     private LocalDate secondEnd;
+    private LocalDate intersectionStart;
+    private LocalDate intersectionEnd;
 
     public DatePeriod(String firstStart, String firstEnd, String secondStart, String secondEnd) {
         this.firstStart = LocalDate.parse(firstStart, DateTimeFormatter.ofPattern("d.MM.yyyy"));
@@ -17,9 +19,13 @@ class DatePeriod {
         this.secondEnd = LocalDate.parse(secondEnd, DateTimeFormatter.ofPattern("d.MM.yyyy"));
     }
 
-    void intersection() {
-        if (firstEnd.isAfter(secondStart) && secondEnd.isAfter(firstEnd)) {
-            System.out.println(secondStart + " -> " + firstEnd);
+    private void kautkas() {
+
+    }
+
+    private void checkIntersection() {
+        if (firstStart.isAfter(secondStart) && secondEnd.isAfter(firstEnd)) {
+            System.out.println(firstStart + " -> " + firstEnd);
         } else if (firstStart.isAfter(secondStart) && secondEnd.isBefore(firstEnd) && firstStart.isBefore(secondEnd)) {
             System.out.println(firstStart + " -> " + secondEnd);
         } else if (firstStart.isBefore(secondStart) && secondEnd.isBefore(firstEnd) && firstEnd.isAfter(secondEnd)) {
@@ -30,6 +36,10 @@ class DatePeriod {
             System.out.println("No intersection!!!");
         }
 
+    }
+
+    public void intersection() {
+        checkIntersection();
     }
 }
 

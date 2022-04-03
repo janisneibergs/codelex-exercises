@@ -8,9 +8,6 @@ import java.util.Scanner;
 import static java.time.temporal.ChronoUnit.DAYS;
 
 public class exercise2 {
-    public int day;
-    public int month;
-    public int year;
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -25,8 +22,10 @@ public class exercise2 {
         LocalDate restartMonth = LocalDate.parse(end, DateTimeFormatter.ofPattern("d.MM.yyyy"));
 
         long daysBetween = DAYS.between(launchDate, restartMonth);
+        int daysInWeek = 7;
+        int serverRestartDays = 14;
         if (launchDate.isBefore(restartMonth)) {
-            for (int i = 0; i < daysBetween / 7; i++) {
+            for (int i = 0; i < daysBetween / daysInWeek; i++) {
                 launchDate = launchDate.plusDays(14);
                 if (launchDate.getMonth().equals(restartMonth.getMonth())) {
                     System.out.println(launchDate);
@@ -34,7 +33,7 @@ public class exercise2 {
             }
         } else {
             for (int i = 0; i < daysBetween / -7; i++) {
-                launchDate = launchDate.minusDays(14);
+                launchDate = launchDate.minusDays(serverRestartDays);
                 if (launchDate.getMonth().equals(restartMonth.getMonth())) {
                     System.out.println(launchDate);
                 }

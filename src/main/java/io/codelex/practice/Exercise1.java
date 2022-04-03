@@ -8,13 +8,12 @@ import java.util.Scanner;
 import static java.time.temporal.ChronoUnit.DAYS;
 
 
-public class exercise1 {
+public class Exercise1 {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);  // Create a Scanner object
+        Scanner input = new Scanner(System.in);
         int workDays = 0;
-        int freeDays = 0;
-//
+        
         System.out.println("Enter start date \"dd.MM.yyyy\" ");
         String start = input.nextLine();
         System.out.println("Enter end date \"dd.MM.yyyy\" ");
@@ -25,7 +24,7 @@ public class exercise1 {
         System.out.println(date1.getDayOfWeek());
         long daysBetween = DAYS.between(date1, date2);
         for (int i = 0; i <= daysBetween; i++) {
-            if (date1.getDayOfWeek().equals(DayOfWeek.SATURDAY) || date1.getDayOfWeek().equals(DayOfWeek.SUNDAY)) {
+            if (isWeekend(date1)) {
                 date1 = date1.plusDays(1);
             } else {
                 workDays++;
@@ -33,5 +32,13 @@ public class exercise1 {
             }
         }
         System.out.println(workDays * 8);
+    }
+
+    public static boolean isWeekend(LocalDate date) {
+        if (date.getDayOfWeek().equals(DayOfWeek.SATURDAY) || date.getDayOfWeek().equals(DayOfWeek.SUNDAY)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
