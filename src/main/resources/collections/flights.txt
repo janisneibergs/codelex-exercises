@@ -1,0 +1,3 @@
+Riga->Berlin
+New York->Anchorage
+London->Funchal
